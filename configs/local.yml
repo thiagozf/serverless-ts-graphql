@@ -1,0 +1,4 @@
+ENV: local
+DYNAMO_TABLE: ${self:custom.dynamoTable}
+REGION: 'localhost'
+NODE_ENV: development

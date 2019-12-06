@@ -1,0 +1,7 @@
+graphql:
+  handler: src/handler.graphqlHandler
+  events:
+    - http:
+        path: graphql
+        method: ANY
+        cors: true

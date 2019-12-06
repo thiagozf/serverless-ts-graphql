@@ -1,0 +1,4 @@
+ENV: dev
+DYNAMO_TABLE: ${self:custom.dynamoTable}
+REGION: ${self:custom.region}
+NODE_ENV: production

@@ -8,5 +8,8 @@ jspm_packages
 # Webpack directories
 .webpack
 
+# DynamoDB Local
+.dynamodb
+
 tmp/
 temp/
