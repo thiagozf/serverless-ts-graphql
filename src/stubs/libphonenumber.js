@@ -1,8 +1,7 @@
-
 module.exports = {
-    PhoneNumberUtil: {
-        getInstance() {
-            return null;
-        },
+  PhoneNumberUtil: {
+    getInstance() {
+      return null
     },
-};
+  },
+}

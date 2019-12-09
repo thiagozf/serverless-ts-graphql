@@ -1,11 +1,11 @@
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
-const HappyPack = require('happypack');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
+const HappyPack = require('happypack')
 const path = require('path')
 const slsw = require('serverless-webpack')
 const FilterWarningsPlugin = require('webpack-filter-warnings-plugin')
-const _ = require('lodash');
+const _ = require('lodash')
 
-const rootDir = path.join(__dirname, '../');
+const rootDir = path.join(__dirname, '../')
 
 const defaults = {
   entry: slsw.lib.entries,
@@ -16,7 +16,10 @@ const defaults = {
     extensions: ['.mjs', '.js', '.jsx', '.json', '.ts', '.tsx'],
     alias: {
       // Remove unecessary dependencies, reducing bundle sizew!
-      'google-libphonenumber': path.resolve(__dirname, '../src/stubs/libphonenumber.js'),
+      'google-libphonenumber': path.resolve(
+        __dirname,
+        '../src/stubs/libphonenumber.js',
+      ),
     },
   },
   output: {
@@ -36,8 +39,8 @@ const defaults = {
       loaders: [
         {
           path: 'babel-loader',
-        }
-      ]
+        },
+      ],
     }),
   ],
   module: {
@@ -45,8 +48,8 @@ const defaults = {
   },
 }
 
-module.exports.defaults = defaults;
+module.exports.defaults = defaults
 
 module.exports.merge = function merge(config) {
-  return _.merge({}, defaults, config);
-};
+  return _.merge({}, defaults, config)
+}

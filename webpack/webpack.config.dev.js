@@ -1,3 +1,3 @@
-const base = require('./webpack.config.base');
+const base = require('./webpack.config.base')
 
-module.exports = base.merge({});
+module.exports = base.merge({})
