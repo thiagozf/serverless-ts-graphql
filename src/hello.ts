@@ -1,6 +1,6 @@
 import { APIGatewayProxyHandler, APIGatewayProxyResult } from 'aws-lambda'
 
-export const hello: APIGatewayProxyHandler = async (
+export const handler: APIGatewayProxyHandler = async (
   event,
   context,
 ): Promise<APIGatewayProxyResult> => {

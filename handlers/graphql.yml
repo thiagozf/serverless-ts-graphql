@@ -1,5 +1,5 @@
 graphql:
-  handler: src/handler.graphqlHandler
+  handler: src/graphql.handler
   events:
     - http:
         path: graphql

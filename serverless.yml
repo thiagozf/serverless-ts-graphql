@@ -6,7 +6,7 @@ package:
 provider:
   name: aws
   runtime: nodejs8.10
-  stage: ${opt:stage, 'local'}
+  stage: local
   timeout: 10 # Default Lambda timeout
   memorySize: 512 # Default Lambda Memory Size
   versionFunctions: false # No functions versioning
@@ -33,6 +33,17 @@ custom:
   process: ${self:custom.prefix}-process
   config: ${self:custom.prefix}-config
   dynamoTable: ${self:custom.prefix}-table
+  # domains:
+  #   prod: api.mycompany.com
+  #   staging: staging-api.mycompany.com
+  #   dev: dev-api.mycompany.com
+
+  webpack:
+    includeModules:
+      forceExclude:
+        - aws-sdk
+        - typescript
+    webpackConfig: ./webpack/webpack.config.${self:custom.stage}.js
 
   serverless-offline:
     host: '0.0.0.0'
@@ -41,10 +52,31 @@ custom:
     perFunction: true
     perType: true
 
+  # customDomain:
+  #   basePath: ""
+  #   domainName: ${self:custom.domains.${self:custom.stage}}
+  #   stage: "${self:custom.stage}"
+  #   createRoute53Record: true
+
+  dynamodb:
+    # If you only want to use DynamoDB Local in some stages, declare them here
+      stages:
+        - local
+      start:
+        port: 8000
+        heapInitial: 200m
+        heapMax: 1g
+        migrate: true
+        seed: true
+        convertEmptyValues: true
+      noStart: true
+
 plugins:
   - serverless-webpack
-  - serverless-dynamodb-local
   - serverless-offline
+  - serverless-dynamodb-local
+  # - serverless-plugin-warmup
+  # - serverless-domain-manager
 
 functions: ${file(serverless-dynamic.js)}
 

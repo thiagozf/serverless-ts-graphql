@@ -7,16 +7,16 @@ services:
     networks:
       - developer
 
-  serverless:
-    build: .
-    volumes:
-      - './:/app'
-    ports:
-      - '3000:3000'
-    depends_on:
-      - dynamo
-    networks:
-      - developer
+  # serverless:
+  #   build: .
+  #   volumes:
+  #     - './:/app'
+  #   ports:
+  #     - '3000:3000'
+  #   depends_on:
+  #     - dynamo
+  #   networks:
+  #     - developer
 
 networks:
   developer:

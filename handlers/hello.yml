@@ -1,5 +1,5 @@
 hello:
-  handler: src/handler.hello
+  handler: src/hello.handler
   events:
     - http:
         method: GET

@@ -1,10 +1,14 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "lib": ["es2017", "esnext.asynciterable"],
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitAny": true,
+    "paths": {
+      "~": ["./*"]
+    },
     "sourceMap": true,
     "target": "es2017",
     "outDir": "lib",

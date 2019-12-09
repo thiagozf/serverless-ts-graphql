@@ -4,24 +4,24 @@ Resources:
     Properties:
       TableName: ${self:custom.dynamoTable}
       AttributeDefinitions:
-        - AttributeName: pk
+        - AttributeName: PK
           AttributeType: S
-        - AttributeName: sk
+        - AttributeName: SK
           AttributeType: S
-        - AttributeName: gs1sk
+        - AttributeName: GSI_SK
           AttributeType: S
       KeySchema:
-        - AttributeName: pk
+        - AttributeName: PK
           KeyType: HASH
-        - AttributeName: sk
+        - AttributeName: SK
           KeyType: RANGE
       # Set the capacity to auto-scale
       GlobalSecondaryIndexes:
-        - IndexName: gsi1
+        - IndexName: GSI_1
           KeySchema:
-            - AttributeName: sk
+            - AttributeName: SK
               KeyType: HASH
-            - AttributeName: gs1sk
+            - AttributeName: GSI_SK
               KeyType: RANGE
           Projection:
             ProjectionType: ALL

@@ -4,12 +4,13 @@ jspm_packages
 
 # Serverless directories
 .serverless
+.dynamodb
 
 # Webpack directories
 .webpack
 
-# DynamoDB Local
-.dynamodb
+# Logs
+*.log
 
 tmp/
 temp/
