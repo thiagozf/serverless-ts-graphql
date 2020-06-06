@@ -23,7 +23,7 @@
     "start:debug": "yarn start"
   },
   "dependencies": {
-    "apollo-server-lambda": "^2.3.3",
+    "apollo-server-lambda": "^2.14.2",
     "class-transformer": "^0.2.3",
     "graphql": "^14.1.1",
     "graphql-iso-date": "^3.6.1",
