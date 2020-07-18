@@ -60,7 +60,7 @@
     "happypack": "^5.0.1",
     "hard-source-webpack-plugin": "^0.13.1",
     "jest": "^24.9.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "prettier": "^1.16.1",
     "serverless-domain-manager": "^3.3.0",
     "serverless-dynamodb-local": "^0.2.38",
